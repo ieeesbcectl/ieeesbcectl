@@ -770,7 +770,7 @@ body.nav-active {
 
 .activities-cards {
   display: flex;
-  max-width: 100%;
+  max-width: 90%;
   font-family: 'Kanit', sans-serif;
   gap: 0.5rem;
   flex-direction: column;
@@ -780,7 +780,7 @@ body.nav-active {
 }
 
 .activities-image img {
-  height: 350px;
+  height: 300px;
   border-radius: 2%;
 }
 
@@ -848,6 +848,7 @@ body.nav-active {
   background-color: rgb(8, 4, 4);
   max-width: 60%;
   height: auto;
+  max-height: 75vh;
   border: 1px solid white;
   border-radius: 5px;
   display: flex;
@@ -879,6 +880,11 @@ body.nav-active {
   .activities-section-h1 {
     font-size: 5rem;
     margin-bottom: 1.75rem;
+  }
+
+  .activities-image img {
+    height: 350px;
+    border-radius: 2%;
   }
 }
 
