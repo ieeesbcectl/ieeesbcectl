@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
 /* Event Listener */
 const addEventOnElements = function (elements, eventType, callback) {
   for (let i = 0, len = elements.length; i < len; i++) {
     elements[i].addEventListener(eventType, callback);
   }
-}
+};
 
 /* Navbar Mobile Show and PC Hide */
 const navbar = document.querySelector("[data-navbar]");
@@ -16,10 +16,25 @@ const toggleNavbar = function () {
   navbar.classList.toggle("active");
   overlay.classList.toggle("active");
   /* document.body.classList.toggle("nav-active"); */
-}
-
+};
 addEventOnElements(navTogglers, "click", toggleNavbar);
 
+/* Activities Section Modal/Dialog Window */
+const openBtns = document.querySelectorAll(".openModal");
+const closeBtns = document.querySelectorAll(".closeModal");
+const modals = document.querySelectorAll(".modal");
+
+openBtns.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    modals[index].classList.add("open");
+  });
+});
+
+closeBtns.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    modals[index].classList.remove("open");
+  });
+});
 
 /* Header and Back to Top */
 const header = document.querySelector("[data-header]");
@@ -36,7 +51,7 @@ const hideHeader = function () {
   }
 
   lastScrollPos = window.scrollY;
-}
+};
 
 window.addEventListener("scroll", function () {
   if (window.scrollY >= 50) {
@@ -62,7 +77,7 @@ const updateSliderPos = function () {
   lastActiveSliderItem.classList.remove("active");
   heroSliderItems[currentSlidePos].classList.add("active");
   lastActiveSliderItem = heroSliderItems[currentSlidePos];
-}
+};
 
 const slideNext = function () {
   if (currentSlidePos >= heroSliderItems.length - 1) {
@@ -72,7 +87,7 @@ const slideNext = function () {
   }
 
   updateSliderPos();
-}
+};
 
 heroSliderNextBtn.addEventListener("click", slideNext);
 
@@ -84,7 +99,7 @@ const slidePrev = function () {
   }
 
   updateSliderPos();
-}
+};
 
 heroSliderPrevBtn.addEventListener("click", slidePrev);
 
@@ -95,12 +110,20 @@ const autoSlide = function () {
   autoSlideInterval = setInterval(function () {
     slideNext();
   }, 7000);
-}
+};
 
-addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseover", function () {
-  clearInterval(autoSlideInterval);
-});
+addEventOnElements(
+  [heroSliderNextBtn, heroSliderPrevBtn],
+  "mouseover",
+  function () {
+    clearInterval(autoSlideInterval);
+  }
+);
 
-addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseout", autoSlide);
+addEventOnElements(
+  [heroSliderNextBtn, heroSliderPrevBtn],
+  "mouseout",
+  autoSlide
+);
 
 window.addEventListener("load", autoSlide);
