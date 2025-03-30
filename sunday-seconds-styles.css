@@ -419,3 +419,38 @@ body.nav-active {
 .previous-release-ion-icon {
   font-size: 100%;
 }
+
+@media only screen and (max-width: 600px) {
+  .sunday-sec-section {
+    height: 100vh;
+    background-image: url(./assets/sunday_seconds_bg.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px 80px 40px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .sunday-sec-logo img {
+    width: 150px;
+    margin-top: 1rem;
+  }
+  
+  .sunday-sec-h1 {
+    font-size: 4rem;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+    line-height: 5rem;
+  }
+  
+  .sunday-sec-h3 {
+    font-family: "Kanit", sans-serif;
+    font-weight: 100;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
