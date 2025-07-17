@@ -832,7 +832,7 @@ body.nav-active {
   bottom: 0;
   left: 0;
   position: fixed;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.150s ease-in-out;
   z-index: -1;
   display: flex;
   align-items: center;
@@ -846,7 +846,7 @@ body.nav-active {
 
 .modal-inner {
   background-color: rgb(8, 4, 4);
-  max-width: 60%;
+  max-width: 85vw;
   height: auto;
   max-height: 75vh;
   border: 1px solid white;
@@ -856,7 +856,8 @@ body.nav-active {
   flex-direction: column;
   justify-items: center;
   padding: 3rem;
-  overflow: auto;
+  overflow-y: auto;
+  word-break: break-word;
 }
 
 .modal button {
@@ -875,6 +876,11 @@ body.nav-active {
   transition: 250ms ease;
 }
 
+.modal-inner p {
+  line-height: 1.6;
+}
+
+
 /* Responsive for larger than 992px screen */
 @media (min-width: 992px) {
   .activities-section-h1 {
@@ -885,6 +891,10 @@ body.nav-active {
   .activities-image img {
     height: 350px;
     border-radius: 2%;
+  }
+
+  .modal-inner {
+    max-width: 70vw;
   }
 }
 

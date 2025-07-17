@@ -36,6 +36,15 @@ closeBtns.forEach((btn, index) => {
   });
 });
 
+// Close modal when clicking outside the modal-inner class
+modals.forEach((modal) => {
+  modal.addEventListener("click", function (e) {
+    if (!e.target.closest(".modal-inner")) {
+      modal.classList.remove("open");
+    }
+  });
+});
+
 /* Header and Back to Top */
 const header = document.querySelector("[data-header]");
 const backTopBtn = document.querySelector("[data-back-top-btn]");
