@@ -717,6 +717,7 @@ body.nav-active {
 
 .why-us-text p {
   color: #d4d4d4;
+  margin-top: 1rem;
 }
 
 .why-us-img {
@@ -741,6 +742,26 @@ body.nav-active {
 
 .why-us-isolated-card-h1 {
   margin-top: 0;
+}
+
+.roles-and-responsibilities-link {
+  color: lightblue;
+}
+
+.why-us-isolated-card-2 {
+  margin: 15px 8px;
+  max-width: auto;
+  background-color: hsl(213, 11%, 13%);
+  padding: 2.5rem 1.25rem;
+  border-radius: 2%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.why-us-isolated-card-2 p {
+  margin-top: 1rem;
 }
 
 /* Activities Section */
