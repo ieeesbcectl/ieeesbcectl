@@ -760,6 +760,10 @@ body.nav-active {
   justify-content: space-around;
 }
 
+.why-us-isolated-card-2 h1 {
+  font-size: 2.6rem;
+}
+
 .why-us-isolated-card-2 p {
   margin-top: 1rem;
 }
@@ -801,8 +805,10 @@ body.nav-active {
 }
 
 .activities-image img {
-  height: 300px;
+  height: 200px;
   border-radius: 2%;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 .activities-text h1 {
@@ -1032,6 +1038,9 @@ body.nav-active {
 /* Media Queries */
 /* Responsive for larger than 575px screen */
 @media (min-width: 575px) {
+  .activities-image img {
+    height: 250px;
+  }
   :root {
     --fontSize-body-2: 2.5rem;
   }
@@ -1083,6 +1092,10 @@ body.nav-active {
   /* Header */
   .navbar-list {
     margin-inline: 30px;
+  }
+
+  .activities-image img {
+    height: 280px;
   }
 
   /* Hero */
