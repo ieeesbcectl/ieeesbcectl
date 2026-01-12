@@ -692,7 +692,7 @@ body.nav-active {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .why-us-card {
@@ -750,7 +750,7 @@ body.nav-active {
 
 .why-us-isolated-card-2 {
   margin: 15px 8px;
-  max-width: auto;
+  max-width: 250px;
   background-color: hsl(213, 11%, 13%);
   padding: 2.5rem 1.25rem;
   border-radius: 2%;
