@@ -768,6 +768,18 @@ body.nav-active {
   margin-top: 1rem;
 }
 
+@media (max-width: 320px) {
+  .why-us-isolated-card-2 {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-us-isolated-card-2 {
+    max-width: 100%;
+  }
+}
+
 /* Activities Section */
 .activities-section {
   display: flex;
