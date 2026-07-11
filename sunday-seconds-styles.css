@@ -330,127 +330,171 @@ body.nav-active {
 
 /* Sunday Seconds */
 .sunday-sec-section {
-  height: 100vh;
+  min-height: 100dvh;
   background-image: url(./assets/sunday_seconds_bg.avif);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
-  padding: 5px 40px 65px 40px;
+  padding: 40px 24px;
   align-items: center;
   text-align: center;
   justify-content: center;
+  user-select: none;
 }
 
 .sunday-sec-logo img {
-  width: 150px;
-  margin-top: 3rem;
+  width: 140px;
+  margin-bottom: 24px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .sunday-sec-h1 {
-  font-size: 5rem;
+  font-size: clamp(3.6rem, 8vw, 5.2rem);
   font-family: "Montserrat", sans-serif;
-  margin-bottom: 1rem;
-  margin-top: 1.5rem;
-  line-height: 5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .sunday-sec-h3 {
-  font-family: "Kanit", sans-serif;
-  font-weight: 100;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  margin-bottom: 12px;
+  opacity: 0.9;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 .sunday-sec-info {
-  font-family: "Kanit", sans-serif;
-  font-weight: 100;
-  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
 }
 
-.sunday-sec-section button {
+.button-group {
   display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  font-family: "Oswald", sans-serif;
-  width: 275px;
-  padding: 10px 0;
-  text-align: center;
-  margin: 5px 10px;
-  border-radius: 6px;
-  font-size: 3.25rem;
-  border: 2px solid whitesmoke;
-  background: transparent;
-  color: #fff;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.sunday-sec-section span {
-  background: rgba(255, 255, 255, 0.75);
-  height: 100%;
-  width: 0;
-  border-radius: 3px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 1;
-  transition: 0.35s;
-}
-
-.sunday-sec-section button:hover span {
+  flex-direction: column;
+  gap: 16px;
   width: 100%;
+  max-width: 320px;
 }
 
-.lower-btn {
-  margin: 0 !important;
-}
-
-.lowest-btn {
-  margin: 10px !important;
-  padding: 10px 20px !important;
-  line-height: 32px;
+.sunday-sec-btn {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.75rem !important;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--white);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-.previous-release-ion-icon {
-  font-size: 100%;
+.sunday-sec-btn ion-icon {
+  font-size: 2.2rem;
+  transition: transform 0.3s ease;
+}
+
+.sunday-sec-btn:hover,
+.sunday-sec-btn:focus-visible {
+  background: var(--white);
+  color: var(--smoky-black-1);
+  border-color: var(--white);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.sunday-sec-btn:hover ion-icon {
+  transform: scale(1.1);
+}
+
+.sunday-sec-btn:active {
+  transform: translateY(0);
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 12px 24px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.home-btn ion-icon {
+  font-size: 1.8rem;
+}
+
+.home-btn:hover,
+.home-btn:focus-visible {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .sunday-sec-btn {
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .sunday-sec-btn:hover,
+  .sunday-sec-btn:focus-visible {
+    transform: none;
+  }
+  .sunday-sec-btn:hover ion-icon {
+    transform: none;
+  }
 }
 
 @media only screen and (max-width: 600px) {
   .sunday-sec-section {
-    height: 100vh;
-    background-image: url(./assets/sunday_seconds_bg.avif);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    padding: 0 40px 80px 40px;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+    padding: 32px 20px;
   }
   
   .sunday-sec-logo img {
-    width: 150px;
-    margin-top: 1rem;
+    width: 120px;
+    margin-bottom: 20px;
   }
   
-  .sunday-sec-h1 {
-    font-size: 4rem;
-    font-family: "Montserrat", sans-serif;
-    margin-bottom: 0.5rem;
-    margin-top: 1.5rem;
-    line-height: 5rem;
+  .content {
+    margin-bottom: 32px;
   }
   
-  .sunday-sec-h3 {
-    font-family: "Kanit", sans-serif;
-    font-weight: 100;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+  .sunday-sec-btn {
+    padding: 14px 20px;
+    font-size: 1.6rem;
   }
 }

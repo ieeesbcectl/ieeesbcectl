@@ -226,7 +226,7 @@ body.nav-active { overflow: hidden; }
 
 .section {
   position: relative;
-  padding-block: var(--section-space);
+  padding-block: 4rem;
   overflow: hidden;
   z-index: 1;
 }
@@ -285,85 +285,119 @@ body.nav-active { overflow: hidden; }
 }
 
 /* IEEE Previous Releases */
-.ieee-execom {
+/* IEEE Previous Releases */
+.magazine-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem 1rem;
-  gap: 2rem;
+  padding: 50px 16px;
 }
 
-.ieee-execom-h1 {
-  font-size: 1.5rem;
-    font-family: 'Kanit', sans-serif;
-    text-align: center;
-}
-
-.universal-alignment {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.ieee-execom-cards-container {
-  display: flex;
-  gap: 1.75rem;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.ieee-execom-card {
-  display: flex;
-  max-width: 100%;
-  width: 80%;
-  font-family: 'Kanit', sans-serif;
-  gap: 0.5rem;
-  flex-direction: column;
-  background-color: #1E2125;
-  border-radius: 2%;
-  padding: 2rem 2rem;
-}
-
-.execom-profile-image img {
-  height: 350px;
-  border-radius: 2%;
-}
-
-.ieee-execom-text h1 {
+.magazine-section-title {
+  font-family: "Anton SC", sans-serif;
+  font-size: clamp(3rem, 5vw, 4.5rem);
   letter-spacing: 1px;
-  font-weight: 600;
+  margin-bottom: 50px;
+  color: var(--white);
+  text-align: center;
+  line-height: 1.2;
 }
 
-.ieee-execom-title {
-  font-weight: 200;
-  line-height: 2.5rem;
+.magazine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.magazine-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.magazine-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1.414; /* A4/Magazine proportion */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.magazine-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.magazine-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px;
+  width: 100%;
+  flex: 1;
+}
+
+.magazine-info h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+.magazine-date {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a8c7fa;
+  margin-bottom: 24px;
 }
 
 .prev-sec-btns {
-    display: flex;
-    margin-top: 1rem;
-    flex-direction: row;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  width: 100%;
 }
 
 .prev-sec-btns > button {
-  background-color: whitesmoke;
-  border: none;
-  color: var(--eerie-black-4);
-  padding: 3px 8px;
-  text-align: center;
-  font-size: 1.5rem;
-  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: 250ms ease;
+  flex: 1;
+  padding: 0; /* padding moves to a to make whole button clickable */
 }
 
 .prev-sec-btns > button:hover {
-  background-color: gray;
-  transition: 250ms ease;
+  background-color: var(--white);
+  color: var(--eerie-black-1);
+}
+
+.prev-sec-btns > button a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px 20px;
 }
 
 /* Footer Section */
@@ -430,20 +464,6 @@ body.nav-active { overflow: hidden; }
 
 /* Responsive for larger than 768px screen */
 @media (min-width: 768px) {
-  .ieee-execom-h1 {
-    font-size: 5rem;
-    margin-bottom: 1.75rem;
-  }
-
-  .ieee-execom-card {
-    max-width: auto;
-    width: auto;
-  }
-
-  .execom-profile-image img {
-    height: 450px;
-  }
-
   .footer-sec {
     display: flex;
     flex-direction: row;
@@ -464,12 +484,6 @@ body.nav-active { overflow: hidden; }
 @media (min-width: 992px) {
   :root {
     --section-space: 100px;
-  }
-
-  .ieee-execom-h1 {
-    font-size: 4.5rem;
-    line-height: 4rem;
-    margin-bottom: 1.75rem;
   }
 
 }

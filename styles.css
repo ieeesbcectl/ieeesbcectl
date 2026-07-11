@@ -676,194 +676,201 @@ body.nav-active {
   visibility: visible;
 }
 
-/* Why Us? Section */
-.why-us {
-  padding: 2rem;
+/* Why Choose IEEE Section */
+.why-choose-section {
+  padding-block: 4rem;
+  background-color: var(--eerie-black-1);
 }
 
-.why-us-h1 {
-  margin: 2rem 0;
-  font-size: 4rem;
+.why-choose-section .section-header {
+  max-width: 800px;
+  margin-inline: auto;
+  margin-block-end: 50px;
+  text-align: center;
+}
+
+.why-choose-section .title-2 {
+  font-family: "Anton SC", sans-serif;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+
+.why-choose-section .section-desc {
   font-family: "Montserrat", sans-serif;
-  line-height: 5rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.6rem;
+  line-height: 1.6;
 }
 
-.why-us-cards {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 
-.why-us-card {
-  margin: 15px 8px;
-  max-width: 100%;
-  background-color: hsl(213, 11%, 13%);
-  padding: 2.5rem 1.25rem;
-  border-radius: 2%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.why-us-card-discounts {
-  width: 90px !important;
-}
-
-.why-us-card-h1 {
-  margin-top: 1.5rem;
-}
-
-.why-us-text p {
-  color: #d4d4d4;
-  margin-top: 1rem;
-}
-
-.why-us-img {
-  display: flex;
-  justify-content: center;
-}
-
-.why-us-card-img {
-  width: 75px;
-  align-items: center;
-  justify-content: center;
-}
-
-.why-us-isolated-card {
-  margin: 20px 20px;
-  max-width: 100%;
-  background-color: hsl(213, 11%, 13%);
-  padding: 2.5rem 1.25rem;
-  border-radius: 2%;
-  text-align: center;
-}
-
-.why-us-isolated-card-h1 {
-  margin-top: 0;
-}
-
-.roles-and-responsibilities-link {
-  color: lightblue;
-}
-
-.why-us-isolated-card-2 {
-  margin: 15px 8px;
-  max-width: 250px;
-  background-color: hsl(213, 11%, 13%);
-  padding: 2.5rem 1.25rem;
-  border-radius: 2%;
-  text-align: center;
+.benefit-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 32px 24px;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  align-items: flex-start;
+  text-align: left;
 }
 
-.why-us-isolated-card-2 h1 {
-  font-size: 2.6rem;
+.benefit-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 24px;
+  opacity: 0.9;
 }
 
-.why-us-isolated-card-2 p {
-  margin-top: 1rem;
+.benefit-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 12px;
+  line-height: 1.3;
 }
 
-@media (max-width: 320px) {
-  .why-us-isolated-card-2 {
-    max-width: 100%;
-  }
+.benefit-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  margin: 0;
 }
 
-@media (max-width: 768px) {
-  .why-us-isolated-card-2 {
-    max-width: 100%;
-  }
+.benefit-link {
+  color: #a8c7fa;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 500;
+  margin-top: 8px;
+  display: inline-block;
 }
 
 /* Activities Section */
 .activities-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 1rem;
-  gap: 2rem;
+  padding-block: 4rem;
+  background-color: var(--eerie-black-1);
 }
 
 .activities-section-h1 {
-  font-size: 3rem;
-  font-family: "Kanit", sans-serif;
+  font-family: "Anton SC", sans-serif;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+  color: var(--white);
   text-align: center;
+  line-height: 1.2;
 }
 
 .activities-section-card-container {
-  display: flex;
-  gap: 1.75rem;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
 }
 
 .activities-cards {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
   display: flex;
-  width: 90%;
-  font-family: 'Kanit', sans-serif;
-  gap: 0.5rem;
   flex-direction: column;
-  background-color: #1E2125;
-  border-radius: 2%;
-  padding: 2rem 2rem;
+  overflow: hidden;
+  text-align: left;
+}
+
+/* Neutralize the "universal-alignment" class that forces centering */
+.activities-cards.universal-alignment {
+  align-items: stretch;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.activities-image {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .activities-image img {
-  height: 200px;
-  border-radius: 2%;
-  max-width: 100%;
-  object-fit: cover;
+  width: 100%;
+  max-height: 240px;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
-.activities-text h1 {
-  margin-top: 8px;
-  font-weight: 400;
-  font-size: 2.5rem;
+.activities-text {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .actitvities-title {
-  font-weight: 200;
-  line-height: 2.5rem;
-  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+  line-height: 1.2;
 }
 
 .activities-status {
-  text-align: center;
-  font-weight: lighter;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a8c7fa;
+  margin-bottom: 24px;
 }
 
 .activities-button-container {
-    display: flex;
-    margin-top: 1rem;
-    flex-direction: row;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
+  margin-top: auto;
+  display: flex;
 }
 
-.activities-button-container > button {
-  background-color: whitesmoke;
-  border: none;
-  color: var(--eerie-black-4);
-  padding: 3px 8px;
-  text-align: center;
-  font-size: 1.5rem;
-  border-radius: 3px;
+.activities-button-container .openModal {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 24px;
+  border-radius: 6px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-.activities-button-container > button:hover {
-  background-color: gray;
-  transition: 250ms ease;
+.activities-button-container .openModal:hover {
+  background-color: var(--primary-clr);
+  color: var(--black);
+  border-color: var(--primary-clr);
 }
 
+.activities-button-container .openModal:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+/* Modal Styling */
 .modal {
   opacity: 0;
   top: 0;
@@ -871,133 +878,191 @@ body.nav-active {
   bottom: 0;
   left: 0;
   position: fixed;
-  transition: all 0.150s ease-in-out;
+  transition: opacity 0.2s ease;
   z-index: -1;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
 .modal.open {
-  opacity: 100%;
+  opacity: 1;
   z-index: 999;
 }
 
 .modal-inner {
-  background-color: rgb(8, 4, 4);
-  max-width: 85vw;
-  height: auto;
-  max-height: 75vh;
-  border: 1px solid white;
-  border-radius: 5px;
+  position: relative;
+  background-color: var(--eerie-black-2);
+  max-width: 750px;
+  width: 90vw;
+  max-height: 85vh;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-items: center;
-  padding: 3rem;
+  padding: 56px 24px 32px 24px;
   overflow-y: auto;
   word-break: break-word;
 }
 
-.modal button {
-  background-color: whitesmoke;
-  border: none;
-  margin-top: 12px;
-  color: var(--eerie-black-4);
-  padding: 3px 8px;
+.modal-inner h2 {
+  font-family: "Anton SC", sans-serif;
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+  color: var(--white);
   text-align: center;
-  font-size: 1.5rem;
-  border-radius: 3px;
-}
-
-.modal button:hover {
-  background-color: gray;
-  transition: 250ms ease;
+  letter-spacing: 1px;
+  line-height: 1.2;
 }
 
 .modal-inner p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
   line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
 }
 
+.modal button.closeModal {
+  margin-top: 24px;
+  align-self: center;
+  background-color: var(--primary-clr);
+  color: var(--black);
+  border: 1px solid var(--primary-clr);
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
 
-/* Responsive for larger than 992px screen */
-@media (min-width: 992px) {
-  .activities-cards {
-    width: 400px;
-  }
+.modal button.closeModal:hover {
+  background-color: transparent;
+  color: var(--primary-clr);
+}
 
-  .activities-section-h1 {
-    font-size: 5rem;
-    margin-bottom: 1.75rem;
-  }
+.modal-close-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent !important;
+  color: var(--white) !important;
+  border: none !important;
+  font-size: 2.8rem !important;
+  padding: 4px !important;
+  cursor: pointer;
+  transition: transform 0.25s ease, color 0.25s ease !important;
+  margin-top: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .activities-image img {
-    height: 350px;
-    border-radius: 2%;
-  }
-
-  .modal-inner {
-    max-width: 70vw;
-  }
+.modal-close-icon:hover {
+  transform: rotate(90deg) !important;
+  color: var(--primary-clr) !important;
 }
 
 /* IEEE General Execom */
 .ieee-execom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 1rem;
-  gap: 2rem;
+  padding-block: 4rem;
+  background-color: var(--eerie-black-1);
 }
 
 .ieee-execom-h1 {
-  font-size: 3rem;
-  font-family: "Kanit", sans-serif;
+  font-family: "Anton SC", sans-serif;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  letter-spacing: 1px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: var(--white);
   text-align: center;
-}
-
-.universal-alignment {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  width: 100%;
+  line-height: 1.2;
 }
 
 .ieee-execom-cards-container {
   display: flex;
-  gap: 1.75rem;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
 }
 
 .ieee-execom-card {
+  width: 160px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
   display: flex;
-  max-width: 100%;
-  width: 70%;
-  font-family: "Kanit", sans-serif;
-  gap: 0.5rem;
   flex-direction: column;
-  background-color: #1e2125;
-  border-radius: 2%;
-  padding: 2rem 2rem;
+  align-items: center;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.ieee-execom-card.universal-alignment {
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.execom-profile-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  margin-bottom: 0;
+  border-radius: 0;
+  overflow: hidden;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .execom-profile-image img {
-  height: 150px;
-  border: 1px solid white;
-  border-radius: 2%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: none;
+  border-radius: 0;
+}
+
+.ieee-execom-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 16px 12px;
+  width: 100%;
 }
 
 .ieee-execom-text h1 {
-  letter-spacing: 1px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
   font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+  letter-spacing: 0;
+  line-height: 1.2;
 }
 
 .ieee-execom-title {
-  font-weight: 200;
-  line-height: 2.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a8c7fa;
+  line-height: 1.4;
 }
 
 /* Footer Section */
@@ -1158,7 +1223,7 @@ body.nav-active {
   .sunday-sec-h1 {
     font-size: 7rem;
     margin-bottom: 3rem;
-    line-height: 2rem;
+    line-height: 1.1;
   }
 
   .sunday-sec-h3 {
@@ -1174,15 +1239,6 @@ body.nav-active {
     font-size: 3.5rem;
   }
 
-  .ieee-execom-h1 {
-    font-size: 5rem;
-    margin: 1.75rem 0 1.75rem 0;
-  }
-
-  .ieee-execom-card {
-    max-width: auto;
-    width: auto;
-  }
 
   .footer-sec {
     display: flex;
@@ -1220,7 +1276,7 @@ body.nav-active {
   .sunday-sec-h1 {
     font-size: 7rem;
     margin-bottom: 3rem;
-    line-height: 2rem;
+    line-height: 1.1;
   }
 
   .sunday-sec-h3 {
@@ -1236,10 +1292,6 @@ body.nav-active {
     font-size: 3.5rem;
   }
 
-  .ieee-execom-h1 {
-    font-size: 6rem;
-    margin: 1.75rem 0 1.75rem 0;
-  }
 }
 
 /* Responsive for larger than 1200px screen */
