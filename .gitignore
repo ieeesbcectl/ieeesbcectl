@@ -26,3 +26,6 @@ yarn-debug.log*
 PRODUCT.md
 DESIGN.md
 redesign-context.md
+
+# Other temporary files
+temp/
