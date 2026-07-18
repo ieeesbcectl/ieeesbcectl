@@ -965,6 +965,43 @@ body.nav-active {
   color: var(--primary-clr) !important;
 }
 
+/* Activities 2025-2026 Collage */
+.activities-collage-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: var(--eerie-black-1);
+}
+
+.activities-collage-h1 {
+  font-family: "Anton SC", sans-serif;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+  color: var(--white);
+  text-align: center;
+  line-height: 1.2;
+  padding-inline: 16px;
+}
+
+.activities-collage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.activities-collage-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 599px) {
+  .activities-collage-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* IEEE General Execom */
 .ieee-execom {
   padding-block: 4rem;
