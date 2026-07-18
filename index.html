@@ -330,7 +330,92 @@
             </div>
           </div>
         </section>
+
         <hr style="height: 1px; border-width: 0; background-color: gray" />
+
+        <!-- ============================================================ -->
+        <!-- ADMISSION WEEK MINIGAME 1 - FIFA CARD GENERATOR              -->
+        <!-- TO REMOVE: Delete everything between these comment tags       -->
+        <!-- ============================================================ -->
+        <section class="mg-card-section" id="fifa-card-game">
+          <div class="mg-card-wrapper">
+            <div class="mg-card-intro">
+              <p class="mg-card-eyebrow">⚽ FIFA World Cup 2026</p>
+              <h2 class="mg-card-heading">Get Your IEEE Player Card</h2>
+              <p class="mg-card-subtext">Enter your details and we'll generate your official IEEE Player Card. Think you've got what it takes?</p>
+            </div>
+
+            <!-- Step 1: Form -->
+            <div class="mg-card-form-wrap" id="mg-form-step">
+              <form class="mg-card-form" id="mg-player-form" novalidate>
+                <div class="mg-field-group">
+                  <label class="mg-label" for="mg-name">Full Name</label>
+                  <input class="mg-input" type="text" id="mg-name" placeholder="e.g. Cristiano Ronaldo" maxlength="30" required />
+                </div>
+                <div class="mg-field-group">
+                  <label class="mg-label" for="mg-phone">Mobile Number</label>
+                  <input class="mg-input" type="tel" id="mg-phone" placeholder="10-digit number" maxlength="10" pattern="[6-9][0-9]{9}" required />
+                </div>
+                <div class="mg-field-group">
+                  <label class="mg-label" for="mg-dept">Department / Branch</label>
+                  <select class="mg-input mg-select" id="mg-dept" required>
+                    <option value="" disabled selected>Select your branch</option>
+                    <option value="CSE">Computer Science &amp; Engineering (CSE)</option>
+                    <option value="AI/DS">Artificial Intelligence &amp; Data Science</option>
+                    <option value="ECE">Electronics &amp; Communication (ECE)</option>
+                    <option value="EEE">Electrical &amp; Electronics (EEE)</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <p class="mg-error-msg" id="mg-error" hidden>Please fill in all fields correctly.</p>
+                <button class="mg-submit-btn" type="submit" id="mg-submit-btn">
+                  <span id="mg-btn-text">Generate My Card ⚡</span>
+                </button>
+              </form>
+            </div>
+
+            <!-- Step 2: Card reveal -->
+            <div class="mg-card-reveal" id="mg-card-step" hidden>
+              <div class="mg-fifa-card" id="mg-fifa-card">
+                <div class="mg-card-overlay" aria-hidden="true"></div>
+                <div class="mg-card-top">
+                  <div class="mg-card-rating" id="mg-rating">--</div>
+                  <div class="mg-card-pos" id="mg-pos">---</div>
+                  <div class="mg-card-flag">🏳️</div>
+                </div>
+                <div class="mg-card-avatar" id="mg-avatar">
+                  <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="40" cy="30" r="18" fill="rgba(255,255,255,0.25)"/>
+                    <ellipse cx="40" cy="72" rx="28" ry="16" fill="rgba(255,255,255,0.2)"/>
+                  </svg>
+                </div>
+                <div class="mg-card-name" id="mg-card-name-display">---</div>
+                <div class="mg-card-stats" id="mg-card-stats">
+                  <div class="mg-stat"><span class="mg-stat-val" id="mg-s1">--</span><span class="mg-stat-key">INN</span></div>
+                  <div class="mg-stat"><span class="mg-stat-val" id="mg-s2">--</span><span class="mg-stat-key">TKW</span></div>
+                  <div class="mg-stat"><span class="mg-stat-val" id="mg-s3">--</span><span class="mg-stat-key">LDR</span></div>
+                  <div class="mg-stat"><span class="mg-stat-val" id="mg-s4">--</span><span class="mg-stat-key">TEC</span></div>
+                  <div class="mg-stat"><span class="mg-stat-val" id="mg-s5">--</span><span class="mg-stat-key">COM</span></div>
+                  <div class="mg-stat"><span class="mg-stat-val" id="mg-s6">--</span><span class="mg-stat-key">POT</span></div>
+                </div>
+                <div class="mg-card-club">IEEE SB CECTL</div>
+              </div>
+
+              <p class="mg-reveal-msg" id="mg-reveal-msg"></p>
+              <div class="mg-card-actions">
+                <button class="mg-share-btn" id="mg-share-btn">📤 Share Card</button>
+                <button class="mg-again-btn" id="mg-again-btn">Try Again</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+        <!-- ============================================================ -->
+        <!-- END ADMISSION WEEK MINIGAME 1                                 -->
+        <!-- ============================================================ -->
+
+        <hr style="height: 1px; border-width: 0; background-color: gray" />
+
 
         <!-- Activities Section -->
         <section class="activities-section" id="activities-section">
@@ -516,7 +601,91 @@
             <img loading="lazy" src="./assets/activities2025/16.avif" alt="IEEE SB CECTL Activity 2025-2026" />
           </div>
         </section>
+
         <hr style="height: 1px; border-width: 0; background-color: gray" />
+
+        <!-- ============================================================ -->
+        <!-- ADMISSION WEEK MINIGAME 2 - PENALTY SHOOTOUT                 -->
+        <!-- TO REMOVE: Delete everything between these comment tags       -->
+        <!-- ============================================================ -->
+        <section class="mg-penalty-section" id="penalty-game">
+          <div class="mg-penalty-wrapper">
+            <p class="mg-card-eyebrow">⚽ FIFA World Cup 2026</p>
+            <h2 class="mg-card-heading">Penalty Shootout</h2>
+            <p class="mg-card-subtext">3 kicks. Pick your corner. Can you beat the keeper?</p>
+
+            <!-- Score display -->
+            <div class="mg-penalty-scoreboard">
+              <div class="mg-score-item">
+                <span class="mg-score-num" id="pg-you-score">0</span>
+                <span class="mg-score-label">YOU</span>
+              </div>
+              <div class="mg-score-divider">vs</div>
+              <div class="mg-score-item">
+                <span class="mg-score-num" id="pg-gk-score">0</span>
+                <span class="mg-score-label">GK</span>
+              </div>
+            </div>
+
+            <!-- Pitch -->
+            <div class="mg-pitch" id="mg-pitch" aria-label="Football goal">
+              <!-- Goal SVG -->
+              <svg class="mg-goal-svg" viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- Net lines vertical -->
+                <line x1="40" y1="0" x2="40" y2="160" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                <line x1="80" y1="0" x2="80" y2="160" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                <line x1="120" y1="0" x2="120" y2="160" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                <line x1="160" y1="0" x2="160" y2="160" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                <line x1="200" y1="0" x2="200" y2="160" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                <line x1="240" y1="0" x2="240" y2="160" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                <line x1="280" y1="0" x2="280" y2="160" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                <!-- Net lines horizontal -->
+                <line x1="0" y1="40" x2="320" y2="40" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                <line x1="0" y1="80" x2="320" y2="80" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                <line x1="0" y1="120" x2="320" y2="120" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                <!-- Goal posts -->
+                <rect x="0" y="0" width="8" height="160" fill="white" rx="2"/>
+                <rect x="312" y="0" width="8" height="160" fill="white" rx="2"/>
+                <rect x="0" y="0" width="320" height="8" fill="white" rx="2"/>
+              </svg>
+              <!-- Keeper -->
+              <div class="mg-keeper" id="mg-keeper">🧤</div>
+              <!-- Ball -->
+              <div class="mg-ball" id="mg-ball">⚽</div>
+              <!-- Result flash -->
+              <div class="mg-goal-flash" id="mg-goal-flash"></div>
+            </div>
+
+            <!-- Kick remaining indicator -->
+            <div class="mg-kick-dots" id="mg-kick-dots">
+              <span class="mg-kick-dot active" id="mg-dot-0"></span>
+              <span class="mg-kick-dot active" id="mg-dot-1"></span>
+              <span class="mg-kick-dot active" id="mg-dot-2"></span>
+            </div>
+
+            <!-- Direction buttons -->
+            <div class="mg-shoot-btns" id="mg-shoot-btns">
+              <button class="mg-shoot-btn" id="pg-left" data-dir="left">⬅ Left</button>
+              <button class="mg-shoot-btn mg-shoot-btn--center" id="pg-center" data-dir="center">Centre</button>
+              <button class="mg-shoot-btn" id="pg-right" data-dir="right">Right ➡</button>
+            </div>
+
+            <!-- Result screen -->
+            <div class="mg-penalty-result" id="mg-penalty-result" hidden>
+              <div class="mg-result-emoji" id="mg-result-emoji">🏆</div>
+              <p class="mg-result-title" id="mg-result-title">---</p>
+              <p class="mg-result-sub" id="mg-result-sub">---</p>
+              <button class="mg-again-btn" id="pg-retry">Play Again</button>
+            </div>
+
+          </div>
+        </section>
+        <!-- ============================================================ -->
+        <!-- END ADMISSION WEEK MINIGAME 2                                 -->
+        <!-- ============================================================ -->
+
+        <hr style="height: 1px; border-width: 0; background-color: gray" />
+
 
 
         <!-- Execom Section -->
@@ -1232,5 +1401,342 @@
     >
       <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
     </a>
+
+  <!-- ============================================================ -->
+  <!-- ADMISSION WEEK MINIGAMES JS                                   -->
+  <!-- TO REMOVE: Delete the <script> block below                    -->
+  <!-- ============================================================ -->
+  <script>
+  (function () {
+    "use strict";
+
+    // ---------------------------------------------------------------
+    // CONFIG: Paste your Google Apps Script Web App URL here
+    // ---------------------------------------------------------------
+    var SHEET_URL = "https://script.google.com/macros/s/AKfycbyL5yQutlPVNTUgL_4tYdLQoHtgwA_nbSYoms6r5L2yXkLupLnKAvhhTITHwALe1A3fbg/exec";
+    // ---------------------------------------------------------------
+
+    /* ---- Helpers ---- */
+    function rand(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // ================================================================
+    // GAME 1: FIFA CARD GENERATOR
+    // ================================================================
+    var deptToPos = {
+      CSE: "MID", IT: "MID", ECE: "DEF", EEE: "GK",
+      ME: "STR", CE: "DEF", CH: "MID", AE: "STR", Other: "SUB"
+    };
+    var deptToFlag = {
+      CSE: "🇧🇷", IT: "🇩🇪", ECE: "🇫🇷", EEE: "🇦🇷",
+      ME: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", CE: "🇵🇹", CH: "🇳🇱", AE: "🇺🇸", Other: "🌍"
+    };
+    var revealMessages = [
+      "You just made the squad. Welcome to IEEE! 🏆",
+      "The scouts have been watching. You're in! ⚡",
+      "World class potential. IEEE sees it. 🌟",
+      "The coach is impressed. Time to shine! ⚽",
+      "From fresher to legend. Your journey starts now. 🔥"
+    ];
+
+    var form = document.getElementById("mg-player-form");
+    var formStep = document.getElementById("mg-form-step");
+    var cardStep = document.getElementById("mg-card-step");
+    var submitBtn = document.getElementById("mg-submit-btn");
+    var btnText = document.getElementById("mg-btn-text");
+    var errorMsg = document.getElementById("mg-error");
+    var againBtn = document.getElementById("mg-again-btn");
+
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var name = document.getElementById("mg-name").value.trim();
+        var phone = document.getElementById("mg-phone").value.trim();
+        var dept = document.getElementById("mg-dept").value;
+
+        if (!name || !phone.match(/^[6-9][0-9]{9}$/) || !dept) {
+          errorMsg.hidden = false;
+          return;
+        }
+        errorMsg.hidden = true;
+
+        // Disable button, show loading
+        submitBtn.disabled = true;
+        btnText.textContent = "Generating...";
+
+        // Generate truly random stats (flattering 75-99 range, different every time)
+        var stats = [rand(75,99), rand(75,99), rand(75,99), rand(75,99), rand(75,99), rand(75,99)];
+        var rating = Math.round(stats.reduce(function(a,b){return a+b;},0) / stats.length);
+
+        // Populate card
+        document.getElementById("mg-rating").textContent = rating;
+        document.getElementById("mg-pos").textContent = deptToPos[dept] || "MID";
+        document.getElementById("mg-card-name-display").textContent = name.toUpperCase().substring(0,18);
+        document.querySelector(".mg-card-flag").textContent = deptToFlag[dept] || "🌍";
+        for (var i = 1; i <= 6; i++) {
+          document.getElementById("mg-s" + i).textContent = stats[i - 1];
+        }
+        document.getElementById("mg-reveal-msg").textContent =
+          revealMessages[rand(0, revealMessages.length - 1)];
+
+        // Send to Google Sheets (fire and forget)
+        if (SHEET_URL && SHEET_URL !== "YOUR_APPS_SCRIPT_URL_HERE") {
+          fetch(SHEET_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name: name, phone: phone, dept: dept, rating: rating, timestamp: new Date().toISOString() })
+          }).catch(function () {}); // Silently ignore errors
+        }
+
+        // Transition to card reveal after short delay
+        setTimeout(function () {
+          formStep.hidden = true;
+          cardStep.hidden = false;
+          submitBtn.disabled = false;
+          btnText.textContent = "Generate My Card ⚡";
+        }, 600);
+      });
+    }
+
+    if (againBtn) {
+      againBtn.addEventListener("click", function () {
+        cardStep.hidden = true;
+        formStep.hidden = false;
+        form.reset();
+      });
+    }
+
+    // Share card button - uses html2canvas to capture card as PNG
+    var shareBtn = document.getElementById("mg-share-btn");
+    var h2cLoaded = false;
+
+    function downloadFallback(canvas) {
+      var link = document.createElement("a");
+      link.download = "ieee-player-card.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+      shareBtn.textContent = "\ud83d\udce4 Share Card";
+      shareBtn.disabled = false;
+    }
+
+    function doCapture() {
+      var card = document.getElementById("mg-fifa-card");
+      shareBtn.textContent = "Generating...";
+      shareBtn.disabled = true;
+
+      window.html2canvas(card, {
+        backgroundColor: null,
+        scale: 2,
+        useCORS: true,
+        logging: false
+      }).then(function (canvas) {
+        canvas.toBlob(function (blob) {
+          var file = new File([blob], "ieee-player-card.png", { type: "image/png" });
+
+          // Try Web Share API with file (works on iOS 15+ and Android Chrome)
+          if (navigator.share) {
+            navigator.share({
+              files: [file],
+              title: "My IEEE Player Card",
+              text: "Check out my IEEE SB CECTL Player Card! \u26bd\ufe0f\ud83c\udfc6"
+            }).then(function () {
+              shareBtn.textContent = "\ud83d\udce4 Share Card";
+              shareBtn.disabled = false;
+            }).catch(function (err) {
+              // AbortError = user cancelled, don't download
+              if (err.name !== "AbortError") {
+                downloadFallback(canvas);
+              } else {
+                shareBtn.textContent = "\ud83d\udce4 Share Card";
+                shareBtn.disabled = false;
+              }
+            });
+          } else {
+            // Desktop: download PNG
+            downloadFallback(canvas);
+          }
+        }, "image/png");
+      }).catch(function () {
+        shareBtn.textContent = "\ud83d\udce4 Share Card";
+        shareBtn.disabled = false;
+      });
+    }
+
+    if (shareBtn) {
+      shareBtn.addEventListener("click", function () {
+        if (h2cLoaded) {
+          doCapture();
+          return;
+        }
+        // Lazy-load html2canvas only when needed
+        var s = document.createElement("script");
+        s.src = "https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js";
+        s.onload = function () { h2cLoaded = true; doCapture(); };
+        s.onerror = function () {
+          shareBtn.textContent = "\ud83d\udce4 Share Card";
+          shareBtn.disabled = false;
+        };
+        document.head.appendChild(s);
+      });
+    }
+
+    // ================================================================
+    // GAME 2: PENALTY SHOOTOUT
+    // ================================================================
+
+    var pg = {
+      kicks: 0,
+      maxKicks: 3,
+      youScore: 0,
+      gkScore: 0,
+      locked: false
+    };
+
+    var pgYou = document.getElementById("pg-you-score");
+    var pgGk = document.getElementById("pg-gk-score");
+    var pgKeeper = document.getElementById("mg-keeper");
+    var pgBall = document.getElementById("mg-ball");
+    var pgFlash = document.getElementById("mg-goal-flash");
+    var pgShootBtns = document.getElementById("mg-shoot-btns");
+    var pgResult = document.getElementById("mg-penalty-result");
+    var pgRetry = document.getElementById("pg-retry");
+    var pgDots = [
+      document.getElementById("mg-dot-0"),
+      document.getElementById("mg-dot-1"),
+      document.getElementById("mg-dot-2")
+    ];
+
+    var resultTitles = {
+      3: ["HAT-TRICK! LEGEND!", "PERFECT SCORE! UNREAL!", "3/3! WORLD CLASS!"],
+      2: ["SOLID EFFORT!", "TWO GOALS! WELL PLAYED!", "2 OUT OF 3 - QUALITY!"],
+      1: ["ONE FOR THE SCRAPBOOK!", "AT LEAST YOU SCORED!", "THE KEEPER WAS TOUGH!"],
+      0: ["SHUTOUT! NEXT TIME...", "THE KEEPER WON TODAY.", "0-3 - WAS THE NET TOO SMALL?"]
+    };
+    var resultSubs = {
+      3: "You're scoring goals and joining IEEE? A true champion.",
+      2: "Good technique! IEEE rewards persistence. Join us!",
+      1: "Better luck next time. IEEE accepts all skill levels!",
+      0: "Even Messi missed a penalty. Come find us and join IEEE anyway!"
+    };
+    var resultEmojis = { 3: "🏆", 2: "🎯", 1: "😅", 0: "😤" };
+
+    var keeperPositions = { left: "15%", center: "50%", right: "85%" };
+    var ballGoalPositions = { left: "15%", center: "50%", right: "85%" };
+
+    function pgShoot(dir) {
+      if (pg.locked || pg.kicks >= pg.maxKicks) return;
+      pg.locked = true;
+
+      // Disable buttons during animation
+      document.querySelectorAll(".mg-shoot-btn").forEach(function(b){ b.disabled = true; });
+
+      // Keeper dives randomly
+      var keeperDirs = ["left", "center", "right"];
+      var keeperChoice = keeperDirs[rand(0, 2)];
+
+      // Move keeper
+      pgKeeper.style.left = keeperPositions[keeperChoice];
+      pgKeeper.style.transform = "translateX(-50%)";
+
+      // Move ball toward goal
+      pgBall.style.left = ballGoalPositions[dir];
+      pgBall.style.bottom = "55%";
+      pgBall.style.fontSize = "1.2rem";
+
+      var scored = (dir !== keeperChoice) || (keeperChoice === "center" && dir === "center" && Math.random() > 0.5);
+
+      // Mark dot as used
+      if (pgDots[pg.kicks]) {
+        pgDots[pg.kicks].classList.remove("active");
+        pgDots[pg.kicks].classList.add("used");
+      }
+
+      setTimeout(function () {
+        if (scored) {
+          pg.youScore++;
+          pgYou.textContent = pg.youScore;
+          pgFlash.textContent = "GOAL! 🔥";
+          pgFlash.style.color = "#f5c518";
+          pgFlash.style.textShadow = "0 0 30px rgba(245,197,24,0.8)";
+        } else {
+          pg.gkScore++;
+          pgGk.textContent = pg.gkScore;
+          pgFlash.textContent = "SAVED! 🧤";
+          pgFlash.style.color = "#ff6b6b";
+          pgFlash.style.textShadow = "0 0 30px rgba(255,107,107,0.8)";
+        }
+        pgFlash.classList.add("show");
+
+        setTimeout(function () {
+          pgFlash.classList.remove("show");
+          // Reset ball
+          pgBall.style.left = "50%";
+          pgBall.style.bottom = "4%";
+          pgBall.style.fontSize = "2.2rem";
+          // Reset keeper
+          pgKeeper.style.left = "50%";
+
+          pg.kicks++;
+
+          if (pg.kicks >= pg.maxKicks) {
+            // Show final result
+            setTimeout(function () {
+              pgShootBtns.hidden = true;
+              pgResult.hidden = false;
+
+              var choices = resultTitles[pg.youScore];
+              document.getElementById("mg-result-title").textContent =
+                choices[rand(0, choices.length - 1)];
+              document.getElementById("mg-result-sub").textContent =
+                resultSubs[pg.youScore];
+              document.getElementById("mg-result-emoji").textContent =
+                resultEmojis[pg.youScore];
+            }, 300);
+          } else {
+            // Re-enable for next kick
+            document.querySelectorAll(".mg-shoot-btn").forEach(function(b){ b.disabled = false; });
+            pg.locked = false;
+          }
+        }, 900);
+      }, 400);
+    }
+
+    // Wire shoot buttons
+    document.querySelectorAll(".mg-shoot-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        pgShoot(this.dataset.dir);
+      });
+    });
+
+    // Retry
+    if (pgRetry) {
+      pgRetry.addEventListener("click", function () {
+        pg.kicks = 0;
+        pg.youScore = 0;
+        pg.gkScore = 0;
+        pg.locked = false;
+        pgYou.textContent = "0";
+        pgGk.textContent = "0";
+        pgResult.hidden = true;
+        pgShootBtns.hidden = false;
+        pgDots.forEach(function(d){
+          if(d){ d.classList.add("active"); d.classList.remove("used"); }
+        });
+        document.querySelectorAll(".mg-shoot-btn").forEach(function(b){ b.disabled = false; });
+        pgBall.style.left = "50%";
+        pgBall.style.bottom = "4%";
+        pgBall.style.fontSize = "2.2rem";
+        pgKeeper.style.left = "50%";
+      });
+    }
+
+  })();
+  </script>
+  <!-- ============================================================ -->
+  <!-- END ADMISSION WEEK MINIGAMES JS                               -->
+  <!-- ============================================================ -->
+
   </body>
 </html>

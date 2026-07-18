@@ -1418,3 +1418,589 @@ body.nav-active {
     visibility: visible;
   }
 }
+
+/* ============================================================ */
+/* ADMISSION WEEK MINIGAMES CSS                                  */
+/* TO REMOVE: Delete everything below this line                  */
+/* ============================================================ */
+
+/* --- Shared minigame tokens --- */
+.mg-card-eyebrow {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #f5c518;
+  margin-bottom: 12px;
+}
+
+.mg-card-heading {
+  font-family: "Anton SC", sans-serif;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+}
+
+.mg-card-subtext {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 50ch;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+.mg-again-btn {
+  margin-top: 20px;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 10px 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.mg-again-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* ---- GAME 1: FIFA CARD GENERATOR ---- */
+.mg-card-section {
+  background-color: var(--eerie-black-1);
+  padding: 64px 16px 80px;
+  text-align: center;
+}
+
+.mg-card-wrapper {
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+.mg-card-intro {
+  margin-bottom: 1rem;
+}
+
+/* Form */
+.mg-card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.mg-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mg-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mg-input {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.mg-input:focus {
+  border-color: #f5c518;
+}
+
+.mg-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23fff' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+.mg-select option {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.mg-error-msg {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  color: #ff6b6b;
+  text-align: center;
+}
+
+.mg-submit-btn {
+  background: #f5c518;
+  color: #0a0a0a;
+  border: none;
+  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 15px 24px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.mg-submit-btn:hover {
+  opacity: 0.88;
+}
+
+.mg-submit-btn:active {
+  transform: scale(0.98);
+}
+
+.mg-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Card reveal */
+.mg-card-reveal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: mg-fadeIn 0.5s ease;
+}
+
+@keyframes mg-fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* FIFA card */
+.mg-fifa-card {
+  width: 240px;
+  min-height: 320px;
+  border-radius: 18px;
+  background: linear-gradient(160deg, #c9a227 0%, #7a5800 45%, #4a3500 100%);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 16px 14px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 4rem;
+}
+
+.mg-fifa-card::before {
+  display: none;
+}
+
+.mg-card-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255,220,80,0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.mg-card-avatar,
+.mg-card-name,
+.mg-card-stats,
+.mg-card-club {
+  position: relative;
+  z-index: 1;
+}
+
+.mg-card-avatar {
+  margin-top: 10px;
+}
+
+
+.mg-card-top {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  gap: 2px;
+}
+
+.mg-card-rating {
+  font-family: "Anton SC", sans-serif;
+  font-size: 4rem;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.mg-card-pos {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mg-card-flag {
+  font-size: 1.8rem;
+  margin-top: 2px;
+}
+
+.mg-card-avatar {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 4px;
+}
+
+.mg-card-avatar svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mg-card-name {
+  font-family: "Anton SC", sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+.mg-card-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mg-card-stats > .mg-stat {
+  width: 30%;
+  margin-bottom: 8px;
+}
+
+.mg-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.mg-stat-val {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.mg-stat-key {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mg-card-club {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.mg-reveal-msg {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  color: rgba(255,255,255,0.8);
+  margin-top: 20px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.mg-card-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mg-share-btn {
+  background: #f5c518;
+  color: #0a0a0a;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.mg-share-btn:hover {
+  opacity: 0.85;
+}
+
+.mg-share-btn:active {
+  transform: scale(0.97);
+}
+
+.mg-share-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.mg-card-actions .mg-again-btn {
+  margin-top: 0;
+}
+
+
+/* ---- GAME 2: PENALTY SHOOTOUT ---- */
+.mg-penalty-section {
+  background-color: var(--eerie-black-1);
+  padding: 64px 16px 80px;
+  text-align: center;
+}
+
+.mg-penalty-wrapper {
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+/* Scoreboard */
+.mg-penalty-scoreboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 28px 0 24px;
+}
+
+.mg-score-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.mg-score-num {
+  font-family: "Anton SC", sans-serif;
+  font-size: 4rem;
+  color: #fff;
+  line-height: 1;
+}
+
+.mg-score-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+}
+
+.mg-score-divider {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  color: rgba(255,255,255,0.4);
+  font-weight: 300;
+}
+
+/* Pitch */
+.mg-pitch {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  margin-inline: auto;
+  background: linear-gradient(180deg, #1a4a1a 0%, #0f2e0f 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.1);
+  aspect-ratio: 16 / 9;
+}
+
+.mg-goal-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75%;
+}
+
+.mg-keeper {
+  position: absolute;
+  font-size: 2.8rem;
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: left 0.25s cubic-bezier(0.22,1,0.36,1);
+  z-index: 2;
+  line-height: 1;
+}
+
+.mg-ball {
+  position: absolute;
+  font-size: 2.2rem;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  transition: left 0.35s cubic-bezier(0.22,1,0.36,1), bottom 0.35s cubic-bezier(0.22,1,0.36,1), font-size 0.35s ease;
+  line-height: 1;
+}
+
+.mg-goal-flash {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Anton SC", sans-serif;
+  font-size: 3.5rem;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+  transition: opacity 0.15s ease;
+}
+
+.mg-goal-flash.show {
+  opacity: 1;
+}
+
+/* Kick dots */
+.mg-kick-dots {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 16px 0 20px;
+}
+
+.mg-kick-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #f5c518;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.mg-kick-dot.used {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Shoot buttons */
+.mg-shoot-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+}
+
+.mg-shoot-btn {
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 14px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.1s ease;
+  touch-action: manipulation;
+}
+
+.mg-shoot-btn:hover {
+  background: rgba(245, 197, 24, 0.15);
+  border-color: #f5c518;
+}
+
+.mg-shoot-btn:active {
+  transform: scale(0.96);
+}
+
+.mg-shoot-btn--center {
+  background: rgba(245, 197, 24, 0.1);
+  border-color: rgba(245, 197, 24, 0.4);
+}
+
+.mg-shoot-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Penalty end result */
+.mg-penalty-result {
+  animation: mg-fadeIn 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mg-result-emoji {
+  font-size: 5rem;
+  margin-top: 4rem;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.mg-result-title {
+  font-family: "Anton SC", sans-serif;
+  font-size: 2.8rem;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.mg-result-sub {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  color: rgba(255,255,255,0.65);
+  max-width: 36ch;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+/* ============================================================ */
+/* END ADMISSION WEEK MINIGAMES CSS                              */
+/* ============================================================ */
+
