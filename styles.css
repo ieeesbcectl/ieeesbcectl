@@ -658,6 +658,91 @@ body {
   display: inline-block;
 }
 
+/* Call to Action Banner */
+.cta-banner-section {
+  padding-block: 6rem;
+  background-color: var(--smoky-black-1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner-container {
+  max-width: 900px;
+  margin-inline: auto;
+  padding-inline: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-banner-title {
+  font-family: "Anton SC", sans-serif;
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.cta-banner-title span {
+  color: #a8c7fa;
+}
+
+.cta-banner-desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 36px;
+  max-width: 600px;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+.cta-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--primary-clr);
+  color: var(--black);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 18px 36px;
+  border-radius: 100px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+}
+
+.cta-banner-btn ion-icon {
+  font-size: 2.2rem;
+  transition: transform 0.3s ease;
+}
+
+.cta-banner-btn:hover,
+.cta-banner-btn:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(255, 255, 255, 0.25);
+}
+
+.cta-banner-btn:hover ion-icon {
+  transform: translateX(4px);
+}
+
+.cta-bg-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(168, 199, 250, 0.08) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
 /* Activities Section */
 .activities-section {
   padding-block: 4rem;
@@ -1272,8 +1357,8 @@ body {
 
 .magazine-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
   width: 100%;
   max-width: 1200px;
 }
@@ -1281,17 +1366,20 @@ body {
 .magazine-card {
   background-color: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   overflow: hidden;
+  max-width: 320px;
+  justify-self: center;
+  width: 100%;
 }
 
 .magazine-cover {
   width: 100%;
-  aspect-ratio: 1 / 1.414;
+  aspect-ratio: 1 / 1;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   background-color: rgba(255, 255, 255, 0.05);
 }
@@ -1307,37 +1395,38 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 24px 16px;
+  justify-content: flex-end;
+  padding: 14px 10px;
   width: 100%;
   flex: 1;
 }
 
 .magazine-info h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 2.25rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: var(--white);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   letter-spacing: 0;
   line-height: 1.3;
+  margin-top: auto;
 }
 
 .magazine-date {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: #a8c7fa;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .prev-sec-btns {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   align-items: center;
   justify-content: center;
-  margin-top: auto;
   width: 100%;
 }
 
@@ -1363,7 +1452,83 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  padding: 8px 20px;
+  padding: 6px 14px;
+}
+
+/* Magazine Responsive */
+@media (max-width: 599px) {
+  .magazine-section {
+    padding: 32px 12px;
+  }
+
+  .magazine-section-title {
+    margin-bottom: 24px;
+  }
+
+  .magazine-grid {
+    gap: 10px;
+  }
+
+  .magazine-card {
+    max-width: none;
+  }
+
+  .magazine-info {
+    padding: 10px 8px;
+  }
+
+  .magazine-info h1 {
+    font-size: 1.2rem;
+  }
+
+  .magazine-date {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .prev-sec-btns {
+    gap: 6px;
+  }
+
+  .prev-sec-btns > button {
+    font-size: 0.9rem;
+  }
+
+  .prev-sec-btns > button a {
+    padding: 5px 10px;
+  }
+}
+
+@media (min-width: 600px) {
+  .magazine-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .magazine-grid {
+    gap: 20px;
+  }
+
+  .magazine-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .magazine-date {
+    font-size: 1.3rem;
+  }
+
+  .magazine-info {
+    padding: 20px 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .magazine-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
 }
 
 /* SUNDAY SECONDS CSS */
@@ -2121,3 +2286,286 @@ body {
 /* ============================================================ */
 /* END ADMISSION WEEK MINIGAMES CSS                              */
 /* ============================================================ */
+
+/* REGISTRATIONS PAGE CSS */
+/* Registrations Navbar */
+.reg-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background-color: var(--eerie-black-4);
+  border-bottom: 1px solid var(--black-alpha-15);
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}
+
+.reg-navbar-logo img {
+  width: 140px;
+  height: auto;
+  display: block;
+}
+
+.reg-navbar-home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.reg-navbar-home-btn ion-icon {
+  font-size: 1.8rem;
+}
+
+.reg-navbar-home-btn:hover,
+.reg-navbar-home-btn:focus-visible {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Registrations Section */
+.reg-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 16px;
+}
+
+.reg-section-title {
+  font-family: "Anton SC", sans-serif;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+  color: var(--white);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.reg-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Registrations Card */
+.reg-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  max-width: 320px;
+  justify-self: center;
+  width: 100%;
+}
+
+.reg-card-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.reg-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.reg-card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 14px 10px;
+  width: 100%;
+  flex: 1;
+}
+
+.reg-card-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+  letter-spacing: 0;
+  line-height: 1.3;
+  margin-top: auto;
+}
+
+.reg-card-deadline {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #a8c7fa;
+  margin-bottom: 4px;
+}
+
+.reg-card-status {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.reg-status-active {
+  color: #4caf50;
+}
+
+.reg-status-closed {
+  color: #ff9800;
+}
+
+/* Register Button */
+.reg-card-btn {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.25s ease;
+}
+
+.reg-card-btn:hover,
+.reg-card-btn:focus-visible {
+  background-color: var(--primary-clr);
+  color: var(--black);
+  border-color: var(--primary-clr);
+}
+
+.reg-card-btn-disabled {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.08);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Registrations Responsive */
+@media (max-width: 599px) {
+  .reg-navbar {
+    padding: 16px 20px;
+  }
+
+  .reg-navbar-logo img {
+    width: 120px;
+  }
+
+  .reg-navbar-home-btn {
+    padding: 8px 16px;
+    font-size: 1.3rem;
+  }
+
+  .reg-navbar-home-btn ion-icon {
+    font-size: 1.6rem;
+  }
+
+  .reg-section {
+    padding: 32px 12px;
+  }
+
+  .reg-section-title {
+    margin-bottom: 24px;
+  }
+
+  .reg-grid {
+    gap: 10px;
+  }
+
+  .reg-card {
+    max-width: none;
+  }
+
+  .reg-card-info {
+    padding: 10px 8px;
+  }
+
+  .reg-card-title {
+    font-size: 1.2rem;
+  }
+
+  .reg-card-deadline {
+    font-size: 1rem;
+  }
+
+  .reg-card-status {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .reg-card-btn {
+    font-size: 1.1rem;
+    padding: 7px 12px;
+  }
+}
+
+@media (min-width: 600px) {
+  .reg-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .reg-navbar {
+    padding: 20px 40px;
+  }
+
+  .reg-grid {
+    gap: 20px;
+  }
+
+  .reg-card-title {
+    font-size: 1.8rem;
+  }
+
+  .reg-card-deadline {
+    font-size: 1.3rem;
+  }
+
+  .reg-card-info {
+    padding: 20px 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .reg-navbar {
+    padding: 20px 60px;
+  }
+
+  .reg-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}
+/* END REGISTRATIONS PAGE CSS */
