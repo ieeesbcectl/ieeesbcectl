@@ -202,7 +202,10 @@ body.nav-active {
 }
 
 .hero-text {
-  display: none;
+  display: block;
+  font-size: clamp(1.75rem, 3.5vw, 3.5rem) !important;
+  line-height: 1.4;
+  margin-top: 8px;
 }
 
 .body-3 {
