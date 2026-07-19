@@ -661,7 +661,7 @@ body {
 /* Call to Action Banner */
 .cta-banner-section {
   padding-block: 6rem;
-  background-color: var(--smoky-black-1);
+  background-color: var(--eerie-black-1);
   position: relative;
   overflow: hidden;
 }
