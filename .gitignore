@@ -20,7 +20,7 @@ yarn-debug.log*
 .vscode/
 .idea/
 
-# Impeccable files
+# Impeccable skill and AI-related files
 .agents/
 .impeccable/
 PRODUCT.md
@@ -31,3 +31,4 @@ CLAUDE.md
 # Other temporary files
 temp/
 todo.md
+resources.md
