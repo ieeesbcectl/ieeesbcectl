@@ -2574,7 +2574,7 @@ body {
 .res-section {
   max-width: 960px;
   margin-inline: auto;
-  padding: 40px 20px 20px;
+  padding: 40px 20px 60px;
 }
 
 /* Page title */
@@ -2664,7 +2664,7 @@ body {
 
 /* Content blocks (each resource category) */
 .res-block {
-  margin-bottom: 20px;
+  margin-bottom: 52px;
 }
 
 .res-block-title {
@@ -2995,7 +2995,7 @@ body {
 
 /* Disclaimer / fine print */
 .res-disclaimer {
-  margin-top: 20px;
+  margin-top: 56px;
   padding: 20px 22px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
@@ -3028,7 +3028,7 @@ body {
 /* Resources page general responsive */
 @media (max-width: 599px) {
   .res-section {
-    padding: 36px 16px 20px;
+    padding: 36px 16px 48px;
   }
 
   .res-page-title {
@@ -3036,7 +3036,7 @@ body {
   }
 
   .res-block {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
   .res-note-github {
@@ -3047,7 +3047,7 @@ body {
 
 @media (min-width: 768px) {
   .res-section {
-    padding: 50px 32px 20px;
+    padding: 60px 32px 72px;
   }
 
   .res-link-item {
@@ -3057,7 +3057,7 @@ body {
 
 @media (min-width: 1200px) {
   .res-section {
-    padding: 50px 20px 20px;
+    padding: 70px 20px 80px;
   }
 }
 /* END RESOURCES PAGE CSS */
