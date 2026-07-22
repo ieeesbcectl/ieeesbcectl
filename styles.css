@@ -2919,8 +2919,12 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: -32px;
-  margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+#youtube-channels {
+  margin-bottom: 24px;
 }
 
 .res-note-github a {
@@ -2934,21 +2938,35 @@ body {
 }
 
 .res-github-title {
-  margin-bottom: 8px;
+  margin-bottom: 2px;
   font-size: 1.6rem;
   color: var(--white);
   font-weight: 500;
 }
 
 .res-github-link {
-  display: inline-flex;
   font-weight: bold;
-  align-items: center;
-  gap: 4px;
+  text-decoration: none;
+  transition: color var(--transition-1);
+  display: inline;
+}
+
+.res-github-link ion-icon {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -0.1em;
+}
+
+.res-github-link:hover,
+.res-github-link:focus-visible {
+  color: #f0f0f0;
 }
 
 .res-github-example {
-  margin-top: 8px;
+  margin-top: 2px;
 }
 
 /* YouTube channels grid */
@@ -3039,7 +3057,7 @@ body {
 
 /* Disclaimer / fine print */
 .res-disclaimer {
-  margin-top: 20px;
+  margin-top: 0;
   padding: 14px 18px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
@@ -3086,6 +3104,7 @@ body {
   .res-note-github {
     flex-direction: column;
     gap: 8px;
+    margin-bottom: 24px;
   }
 }
 
