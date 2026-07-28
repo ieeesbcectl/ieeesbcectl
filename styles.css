@@ -603,6 +603,7 @@ body {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.6rem;
   line-height: 1.6;
+  text-align: justify;
 }
 
 .benefits-grid {
@@ -644,6 +645,7 @@ body {
 .benefit-text {
   font-family: "Montserrat", sans-serif;
   font-size: 1.4rem;
+  text-align: justify;
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.6;
   margin: 0;
@@ -2625,6 +2627,7 @@ body {
 
 .res-tip-text {
   font-family: "Montserrat", sans-serif;
+  text-align: justify;
   font-size: 1.5rem;
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.65;
@@ -2660,6 +2663,7 @@ body {
   font-size: 1.55rem;
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.7;
+  text-align: justify;
 }
 
 /* Content blocks (each resource category) */
@@ -2684,6 +2688,7 @@ body {
   color: rgba(255, 255, 255, 0.65);
   line-height: 1.65;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 /* Branch group cards grid */
@@ -2836,6 +2841,7 @@ body {
   font-size: 1.35rem;
   color: rgba(255, 255, 255, 0.55);
   line-height: 1.55;
+  text-align: justify;
 }
 
 .res-link-desc code {
@@ -2902,6 +2908,10 @@ body {
   font-size: 1.45rem;
   color: rgba(255, 255, 255, 0.65);
   line-height: 1.65;
+}
+
+.res-note-box p {
+  text-align: justify;
 }
 
 .res-note-box code {
@@ -3080,6 +3090,7 @@ body {
   color: rgba(255, 255, 255, 0.35);
   line-height: 1.7;
   margin-bottom: 8px;
+  text-align: justify;
 }
 
 .res-disclaimer p strong {
